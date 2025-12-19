@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ================= GLOBAL ================= */
 body {
     margin: 0;
     padding: 0;
@@ -94,7 +93,7 @@ button:hover {
 .content {
     max-width: 950px;
     margin: auto;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     padding: 45px;
     border-radius: 35px;
     text-align: center;
@@ -216,6 +215,22 @@ p {
             <strong>I love you more than noodles 🍜❤️</strong>
         </p>
 
+        <!-- 🌸 NEW GENUINE LOVE PARAGRAPH 🌸 -->
+        <p>
+            Loving you hasn’t been about perfection,
+            it’s been about effort — about showing up,
+            even when it’s hard, even when words fail.
+            It’s in the quiet understanding,
+            the patience we learnt, the space we gave,
+            and the way we always found our way back.
+            Thank you for choosing me on days I wasn’t easy to love,
+            for holding my hand instead of walking away,
+            and for making love feel safe, steady, and real.
+            With you, love feels like home — calm, warm,
+            and something I want to keep choosing for a lifetime.
+            I LOVE YOU, VID!
+        </p>
+
         <p>
             No remake. No surrender. No exit.
             I’d queue with you in every version of life 💫
@@ -239,22 +254,18 @@ p {
 </audio>
 
 <script>
-/* ===== CONFIG ===== */
 const PASSWORD = "khushvid";
 
-/* ===== POPUP NOTES ===== */
 const notes = [
     "From Valorant lobby to my heart 🎮💘",
     "I love you more than noodles 🍜❤️",
     "You’re my favorite teammate for life 💕",
-    "No FF on us 😌",
+    "No nazar piilliiizzz 😌",
     "KhushVid forever 💫"
 ];
 
-/* ===== UNLOCK ===== */
 function unlock() {
     const input = document.getElementById("password").value.trim();
-
     if (input === PASSWORD) {
         document.getElementById("hacker").style.display = "none";
         document.getElementById("love").style.display = "block";
@@ -265,12 +276,10 @@ function unlock() {
     }
 }
 
-/* ENTER KEY SUPPORT */
 document.addEventListener("keydown", e => {
     if (e.key === "Enter") unlock();
 });
 
-/* ===== HEART RAIN ===== */
 function startHeartRain() {
     setInterval(() => {
         const heart = document.createElement("div");
@@ -283,7 +292,6 @@ function startHeartRain() {
     }, 300);
 }
 
-/* ===== POPUP ===== */
 function showLove() {
     document.getElementById("popupText").innerText =
         notes[Math.floor(Math.random() * notes.length)];
