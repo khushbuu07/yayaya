@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= HACKER TERMINAL ================= */
+/* ============ HACKER TERMINAL ============ */
 .hacker {
     background: #000;
     color: #00ff9c;
@@ -25,7 +25,7 @@ body {
 
 .terminal {
     width: 90%;
-    max-width: 700px;
+    max-width: 720px;
     background: #020202;
     border: 1px solid #00ff9c;
     padding: 25px;
@@ -78,7 +78,7 @@ button:hover {
     margin-top: 10px;
 }
 
-/* ================= LOVE PAGE ================= */
+/* ============ LOVE PAGE ============ */
 .love {
     display: none;
     min-height: 100vh;
@@ -91,10 +91,10 @@ button:hover {
 }
 
 .content {
-    max-width: 950px;
+    max-width: 980px;
     margin: auto;
-    background: rgba(255,255,255,0.88);
-    padding: 45px;
+    background: rgba(255,255,255,0.92);
+    padding: 50px;
     border-radius: 35px;
     text-align: center;
     box-shadow: 0 25px 60px rgba(0,0,0,0.25);
@@ -107,9 +107,9 @@ h1 {
 }
 
 .names {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .big-hearts {
@@ -120,17 +120,44 @@ h1 {
 
 p {
     font-size: 1.15rem;
-    line-height: 1.9;
-    margin: 18px 0;
+    line-height: 1.95;
+    margin: 22px 0;
 }
 
-.footer {
-    margin-top: 35px;
+/* hacker-love logs */
+.logs {
+    font-family: "Courier New", monospace;
+    background: #2b0f1a;
+    color: #ffd1dc;
+    padding: 22px;
+    border-radius: 15px;
+    text-align: left;
+    margin: 30px 0;
+}
+
+/* Valorant section */
+.valorant {
+    background: rgba(255,255,255,0.75);
+    padding: 28px;
+    border-radius: 22px;
+    margin: 35px 0;
+}
+
+.final-love {
+    background: rgba(255,235,240,0.9);
+    padding: 35px;
+    border-radius: 25px;
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+.signature {
+    margin-top: 30px;
     font-style: italic;
     font-size: 1.2rem;
 }
 
-/* ================= HEART RAIN ================= */
+/* ============ HEART RAIN ============ */
 .heart {
     position: fixed;
     top: -10vh;
@@ -147,7 +174,7 @@ p {
     }
 }
 
-/* ================= POPUP ================= */
+/* ============ POPUP ============ */
 .popup {
     position: fixed;
     top: 50%;
@@ -175,14 +202,13 @@ p {
 
 <body>
 
-<!-- ================= HACKER TERMINAL ================= -->
+<!-- ============ HACKER TERMINAL ============ -->
 <div class="hacker" id="hacker">
     <div class="terminal">
         <div class="line">[SYSTEM] Booting Secure Terminal...</div>
         <div class="line">[INFO] Encryption: AES-256 ENABLED</div>
         <div class="line">[INFO] Firewall: ACTIVE</div>
-        <div class="line">[INFO] Unauthorized access prohibited</div>
-        <div class="line">[AUTH] Enter access key to continue</div>
+        <div class="line">[AUTH] Enter access key</div>
 
         <div class="prompt">
             <span>&gt;</span>
@@ -194,7 +220,7 @@ p {
     </div>
 </div>
 
-<!-- ================= LOVE PAGE ================= -->
+<!-- ============ LOVE PAGE ============ -->
 <div class="love" id="love">
     <div class="content">
         <h1>Happy One Year ❤️</h1>
@@ -203,52 +229,76 @@ p {
         <div class="big-hearts" onclick="showLove()">💖 💕 💗 💞 💘</div>
         <small><strong>Click above the hearts 👆</strong></small>
 
+        <!-- Hacker → Love Logs -->
+        <div class="logs">
+            [SCAN] Vulnerability detected: falling in love<br>
+            [WARNING] Emotional attachment increasing<br>
+            [PATCH] Applied: patience, effort, understanding<br>
+            [STATUS] Connection stable<br>
+            [RESULT] KhushVid locked permanently ❤️
+        </div>
+
         <p>
             It’s funny how two random players met in a Valorant lobby
             and ended up becoming each other’s safest place.
-            From clutches and chaos to long talks, fights, sorrys,
-            thank-yous, and choosing each other again and again —
-            we’ve grown through everything together.
-            You’re my favorite teammate, my comfort,
-            my forever duo.
-            And just so you know…
+            From clutches and chaos to long talks,
+            misunderstandings, sorrys, thank-yous,
+            and choosing each other again and again —
+            we grew into something real.
+            You’re my favorite teammate,
+            my comfort, my forever duo.
+            And just so you know —
             <strong>I love you more than noodles 🍜❤️</strong>
         </p>
 
-        <!-- 🌸 NEW GENUINE LOVE PARAGRAPH 🌸 -->
-        <p>
-            Loving you hasn’t been about perfection,
-            it’s been about effort — about showing up,
-            even when it’s hard, even when words fail.
-            It’s in the quiet understanding,
-            the patience we learnt, the space we gave,
-            and the way we always found our way back.
-            Thank you for choosing me on days I wasn’t easy to love,
-            for holding my hand instead of walking away,
-            and for making love feel safe, steady, and real.
-            With you, love feels like home — calm, warm,
-            and something I want to keep choosing for a lifetime.
-            I LOVE YOU, VID!
-        </p>
+        <!-- Valorant Section -->
+        <div class="valorant">
+            <h3>🎮 Our First Match</h3>
+            <p>Duo Queue: Unplanned</p>
+            <p>Map: Unknown</p>
+            <p>Outcome: Forever Teammates</p>
+            <p>Rank: Doesn’t matter</p>
+            <p>Chemistry: S-Tier 💯</p>
+        </div>
 
-        <p>
-            No remake. No surrender. No exit.
-            I’d queue with you in every version of life 💫
-        </p>
+        <!-- 🌸 YOUR GENUINE LOVE PARAGRAPH (CENTERPIECE) 🌸 -->
+        <div class="final-love">
+            <p>
+                Loving you hasn’t been about perfection, it’s been about effort —
+                about showing up, even when it’s hard, even when words fail.
+                It’s in the quiet understanding, the patience we learnt,
+                the space we gave, and the way we always found our way back.
+                Thank you for choosing me on days I wasn’t easy to love,
+                for holding my hand instead of walking away,
+                and for making love feel safe, steady, and real.
+                With you, love feels like home —
+                calm, warm, and something I want to keep choosing for a lifetime.
+            </p>
 
-        <div class="footer">
-            Always your duo 💕<br>— Khushbu
+            <p style="font-weight:bold; font-size:1.3rem;">
+                I LOVE YOU, VID! ❤️
+            </p>
+
+            <p>
+                No remake. No surrender. No exit.
+                I’d queue with you in every version of life 💫
+            </p>
+        </div>
+
+        <div class="signature">
+            Always your duo 💕<br>
+            — Khushbu
         </div>
     </div>
 </div>
 
-<!-- ================= POPUP ================= -->
+<!-- ============ POPUP ============ -->
 <div class="popup" id="popup">
     <div id="popupText"></div>
     <button onclick="closePopup()">Awww 🥹</button>
 </div>
 
-<!-- ================= MUSIC ================= -->
+<!-- ============ MUSIC ============ -->
 <audio id="music" loop>
     <source src="song.mp3" type="audio/mpeg">
 </audio>
@@ -260,7 +310,7 @@ const notes = [
     "From Valorant lobby to my heart 🎮💘",
     "I love you more than noodles 🍜❤️",
     "You’re my favorite teammate for life 💕",
-    "No nazar piilliiizzz 😌",
+    "No FF on us 😌",
     "KhushVid forever 💫"
 ];
 
