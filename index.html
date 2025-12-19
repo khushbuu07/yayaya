@@ -1,164 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Secure Access Portal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Secure Access Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Consolas, monospace;
-            height: 100vh;
-            background: radial-gradient(circle at top, #0f2027, #000);
-            color: #00ffcc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
 
-        .terminal {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
-            width: 90%;
-            max-width: 500px;
-            text-align: left;
-        }
+/* ============ HACKER PAGE ============ */
+.hacker {
+    font-family: Consolas, monospace;
+    background: radial-gradient(circle at top, #0f2027, #000);
+    color: #00ffcc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .terminal h1 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
+.terminal {
+    background: rgba(0,0,0,0.85);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 0 30px rgba(0,255,204,0.3);
+}
 
-        .terminal p {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            margin: 5px 0;
-        }
+input {
+    width: 100%;
+    background: black;
+    border: none;
+    border-bottom: 1px solid #00ffcc;
+    color: #00ffcc;
+    padding: 8px;
+    outline: none;
+    font-family: Consolas, monospace;
+}
 
-        .prompt {
-            margin-top: 15px;
-        }
+button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    cursor: pointer;
+}
 
-        input {
-            width: 100%;
-            background: black;
-            border: none;
-            border-bottom: 1px solid #00ffcc;
-            color: #00ffcc;
-            font-family: Consolas, monospace;
-            font-size: 1rem;
-            padding: 8px;
-            outline: none;
-        }
+button:hover {
+    background: #00ffcc;
+    color: black;
+}
 
-        button {
-            margin-top: 15px;
-            background: transparent;
-            border: 1px solid #00ffcc;
-            color: #00ffcc;
-            padding: 8px 20px;
-            cursor: pointer;
-            font-family: Consolas, monospace;
-        }
+.error {
+    color: #ff4d4d;
+    display: none;
+    margin-top: 10px;
+}
 
-        button:hover {
-            background: #00ffcc;
-            color: black;
-        }
+/* ============ LOVE PAGE ============ */
+.love {
+    display: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+}
 
-        .error {
-            margin-top: 10px;
-            color: #ff4d4d;
-            display: none;
-        }
+.card {
+    max-width: 750px;
+    margin: auto;
+    background: rgba(255,255,255,0.15);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
 
-        /* LOVE PAGE */
-        .love {
-            display: none;
-            text-align: center;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-        }
+.hearts {
+    font-size: 2.3rem;
+    margin: 20px 0;
+    cursor: pointer;
+    animation: float 2s infinite alternate;
+}
 
-        .love h1 {
-            font-size: 2.5rem;
-        }
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
 
-        .love p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #ff4d6d;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 300px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 999;
+}
 
-        .hearts {
-            font-size: 2rem;
-            margin: 20px 0;
-        }
-    </style>
+.popup button {
+    margin-top: 15px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HACKER LOGIN -->
-    <div class="terminal" id="terminal">
-        <h1>SECURE SYSTEM ACCESS</h1>
+<!-- ============ HACKER LOGIN ============ -->
+<div class="hacker" id="hacker">
+    <div class="terminal">
+        <h3>SECURE SYSTEM ACCESS</h3>
         <p>Initializing encrypted session...</p>
         <p>Firewall: ACTIVE</p>
         <p>Authorization required.</p>
 
-        <div class="prompt">
-            <p>> Enter access key:</p>
-            <input type="password" id="password" autofocus>
-            <button onclick="unlock()">Authenticate</button>
-            <div class="error" id="error">ACCESS DENIED</div>
-        </div>
+        <p>> Enter access key:</p>
+        <input type="password" id="password">
+        <button onclick="unlock()">Authenticate</button>
+        <div class="error" id="error">ACCESS DENIED</div>
     </div>
+</div>
 
-    <!-- LOVE PAGE -->
-    <div class="love" id="love">
+<!-- ============ LOVE PAGE ============ -->
+<div class="love" id="love">
+    <div class="card">
         <h1>Happy One Year ❤️</h1>
+        <h2>Vid 💕 Khushbu</h2>
 
-        <div class="hearts">💖 💕 💗 💞 💘</div>
+        <div class="hearts" onclick="showLove()">
+            💖 💕 💗 💞 💘
+        </div>
+        <small>(click the hearts 👀)</small>
 
         <p>
-            Surprise 😌  
-            You just hacked into my heart.
+            Vid, congratulations —  
+            you successfully hacked into my heart and never logged out 😌❤️
         </p>
 
         <p>
-            One year with you has been my favorite journey.
-            Thank you for being my constant, my comfort, my love.
+            One year with you = laughter, chaos, comfort, love,
+            and me annoying you forever 💫
         </p>
 
         <p>
-            Here’s to us — now and always 💫
+            I choose you. Every day. No retries. No rollback.
         </p>
 
-        <p style="margin-top:20px; font-style:italic;">
-            Forever yours ❤️<br>
-            — Your Girlfriend
+        <p style="margin-top:25px;font-style:italic;">
+            Forever yours 💕<br>— Khushbu
         </p>
     </div>
+</div>
 
-    <script>
-        function unlock() {
-            const key = "khushvid"; // 🔐 CHANGE PASSWORD HERE
-            const input = document.getElementById("password").value;
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div id="popupText"></div>
+    <button onclick="closePopup()">Okay 🥰</button>
+</div>
 
-            if (input === key) {
-                document.getElementById("terminal").style.display = "none";
-                document.getElementById("love").style.display = "block";
-            } else {
-                document.getElementById("error").style.display = "block";
-            }
-        }
-    </script>
+<!-- BACKGROUND MUSIC -->
+<audio id="music" loop>
+    <!-- 🔴 PUT YOUR SONG LINK HERE -->
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const notes = [
+    "Vid, you are my favorite notification ❤️",
+    "If loving you was a bug, I’d never fix it 😌",
+    "You + Me = My safest place 💕",
+    "One year down, forever to go 💫",
+    "I still get butterflies. Yes, you did this 🦋",
+    "You’re stuck with me now. No uninstall 😈"
+];
+
+function unlock() {
+    const key = "iloveyou"; // 🔐 CHANGE PASSWORD
+    const input = document.getElementById("password").value;
+
+    if (input === key) {
+        document.getElementById("hacker").style.display = "none";
+        document.getElementById("love").style.display = "block";
+        document.getElementById("music").play();
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+
+function showLove() {
+    const popup = document.getElementById("popup");
+    const text = document.getElementById("popupText");
+    text.innerText = notes[Math.floor(Math.random() * notes.length)];
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
