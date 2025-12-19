@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My One & Only ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 20px;
+            background: #ff4d6d;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff1e56;
+        }
+
+        .error {
+            margin-top: 10px;
+            color: #ffd6e0;
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hearts {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PASSWORD SCREEN -->
+    <div class="box" id="lockScreen">
+        <h1>🔐 Private Page</h1>
+        <p>Only my favorite person can enter 💕</p>
+
+        <input type="password" id="password" placeholder="Enter the secret 💌">
+        <br>
+        <button onclick="checkPassword()">Unlock ❤️</button>
+
+        <div class="error" id="errorMsg">Wrong password 😝 Try again!</div>
+    </div>
+
+    <!-- LOVE MESSAGE -->
+    <div class="box hidden" id="lovePage">
+        <h1>Happy One Year ❤️</h1>
+        <p>To My Favorite Human</p>
+
+        <div class="hearts">💖 💕 💗 💞 💘</div>
+
+        <p>
+            One year ago, I found you — and somehow my world became softer,
+            brighter, and full of love.
+        </p>
+
+        <p>
+            Thank you for choosing me, loving me, and standing by me.
+            You are my comfort, my smile, my home.
+        </p>
+
+        <p>
+            I can’t wait to make a million more memories with you 💫
+        </p>
+
+        <p style="margin-top:20px; font-style:italic;">
+            Forever yours ❤️<br>
+            — Your Girlfriend
+        </p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "khushvid"; // 🔴 CHANGE PASSWORD HERE
+            const input = document.getElementById("password").value;
+
+            if (input === correctPassword) {
+                document.getElementById("lockScreen").classList.add("hidden");
+                document.getElementById("lovePage").classList.remove("hidden");
+            } else {
+                document.getElementById("errorMsg").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
