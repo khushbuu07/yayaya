@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Secure Access</title>
+<title>Secure System Terminal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-/* ===== HACKER PAGE ===== */
+/* ================= HACKER TERMINAL ================= */
 .hacker {
-    font-family: Consolas, monospace;
-    background: radial-gradient(circle at top, #0f2027, #000);
-    color: #00ffcc;
+    background: #000;
+    color: #00ff9c;
+    font-family: "Courier New", monospace;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,57 +25,80 @@ body {
 }
 
 .terminal {
-    background: rgba(0,0,0,0.85);
-    padding: 30px;
-    border-radius: 10px;
     width: 90%;
-    max-width: 520px;
+    max-width: 700px;
+    background: #020202;
+    border: 1px solid #00ff9c;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(0,255,156,0.4);
+}
+
+.line {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+.prompt {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.prompt span {
+    margin-right: 8px;
 }
 
 input {
-    width: 100%;
     background: black;
     border: none;
-    border-bottom: 1px solid #00ffcc;
-    color: #00ffcc;
-    padding: 8px;
+    border-bottom: 1px solid #00ff9c;
+    color: #00ff9c;
     outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
 }
 
 button {
     margin-top: 15px;
-    padding: 8px 20px;
     background: transparent;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
+    border: 1px solid #00ff9c;
+    color: #00ff9c;
+    padding: 8px 20px;
     cursor: pointer;
+}
+
+button:hover {
+    background: #00ff9c;
+    color: black;
 }
 
 .error {
     color: #ff4d4d;
     display: none;
+    margin-top: 10px;
 }
 
-/* ===== LOVE PAGE ===== */
+/* ================= LOVE PAGE ================= */
 .love {
     display: none;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    background: linear-gradient(135deg, #ffd1dc, #f6a6b2);
     font-family: 'Segoe UI', sans-serif;
-    position: relative;
-    padding: 40px 20px;
-    overflow: hidden;
     color: #5a0f2e;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .content {
     max-width: 950px;
     margin: auto;
-    text-align: center;
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.85);
     padding: 45px;
-    border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     position: relative;
     z-index: 2;
 }
@@ -85,8 +109,8 @@ h1 {
 
 .names {
     font-size: 1.8rem;
-    margin-bottom: 20px;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .big-hearts {
@@ -97,7 +121,7 @@ h1 {
 
 p {
     font-size: 1.15rem;
-    line-height: 1.95;
+    line-height: 1.9;
     margin: 18px 0;
 }
 
@@ -107,7 +131,7 @@ p {
     font-size: 1.2rem;
 }
 
-/* ===== HEART RAIN ===== */
+/* ================= HEART RAIN ================= */
 .heart {
     position: fixed;
     top: -10vh;
@@ -124,7 +148,7 @@ p {
     }
 }
 
-/* ===== POPUP ===== */
+/* ================= POPUP ================= */
 .popup {
     position: fixed;
     top: 50%;
@@ -152,83 +176,86 @@ p {
 
 <body>
 
-<!-- ===== HACKER LOGIN ===== -->
+<!-- ================= HACKER TERMINAL ================= -->
 <div class="hacker" id="hacker">
     <div class="terminal">
-        <h3>SECURE SYSTEM ACCESS</h3>
-        <p>> Enter access key:</p>
-        <input type="password" id="password">
+        <div class="line">[SYSTEM] Booting Secure Terminal...</div>
+        <div class="line">[INFO] Encryption: AES-256 ENABLED</div>
+        <div class="line">[INFO] Firewall: ACTIVE</div>
+        <div class="line">[INFO] Unauthorized access prohibited</div>
+        <div class="line">[AUTH] Enter access key to continue</div>
+
+        <div class="prompt">
+            <span>&gt;</span>
+            <input type="password" id="password" placeholder="access_key">
+        </div>
+
         <button onclick="unlock()">Authenticate</button>
         <div class="error" id="error">ACCESS DENIED</div>
     </div>
 </div>
 
-<!-- ===== LOVE PAGE ===== -->
+<!-- ================= LOVE PAGE ================= -->
 <div class="love" id="love">
     <div class="content">
         <h1>Happy One Year ❤️</h1>
         <div class="names">KhushVid 💕</div>
 
         <div class="big-hearts" onclick="showLove()">💖 💕 💗 💞 💘</div>
-        <small><strong>Click above the hearts khikhi 👆</strong></small>
+        <small><strong>Click above the hearts 👆</strong></small>
 
         <p>
-            It still makes me smile that out of all places,
-            we found each other in a Valorant match.
-            Two random players, one lobby, one game —
-            and somehow that turned into *us*.
-            From clutches, calls, and chaos,
-            to late-night talks, fights, sorrys, thank-yous,
-            and choosing each other even when things weren’t easy.
-            We’ve grown together, learnt patience,
-            learnt love, and learnt how to stay.
-            And just so you know —  
-            <strong>I love you more than noodles</strong>,
-            which honestly says everything.
+            It’s funny how two random players met in a Valorant lobby
+            and ended up becoming each other’s safest place.
+            From clutches and chaos to long talks, fights, sorrys,
+            thank-yous, and choosing each other again and again —
+            we’ve grown through everything together.
+            You’re my favorite teammate, my comfort,
+            my forever duo.
+            And just so you know…
+            <strong>I love you more than noodles 🍜❤️</strong>
         </p>
 
         <p>
-            You’re my favourite teammate,
-            my one n only safest duo,
-            the one I’d queue with in every mode of life.
-            Even on bad rounds, I’d still pick you —
-            no remake, no surrender, only us 💫
-            Jyada khush hone ki jarurat nhiii haii heh
+            No remake. No surrender. No exit.
+            I’d queue with you in every version of life 💫
         </p>
 
         <div class="footer">
-            Always your duo, forever 💕<br>
-            — Khushbu
+            Always your duo 💕<br>— Khushbu
         </div>
     </div>
 </div>
 
-<!-- POPUP -->
+<!-- ================= POPUP ================= -->
 <div class="popup" id="popup">
     <div id="popupText"></div>
     <button onclick="closePopup()">Awww 🥹</button>
 </div>
 
-<!-- 🎵 SOFT ROMANTIC MUSIC -->
+<!-- ================= MUSIC ================= -->
 <audio id="music" loop>
     <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+/* ===== CONFIG ===== */
+const PASSWORD = "khushvid";
+
+/* ===== POPUP NOTES ===== */
 const notes = [
-    "I love you more than noodles 🍜❤️",
     "From Valorant lobby to my heart 🎮💘",
-    "My perfect duo 💕",
-    "KhushVid > everything else 💫",
-    "No clutch compares to choosing you 🥹"
-    "Jyada udne ki jarurat nahi haii heh 😌",
+    "I love you more than noodles 🍜❤️",
+    "You’re my favorite teammate for life 💕",
+    "No FF on us 😌",
+    "KhushVid forever 💫"
 ];
 
+/* ===== UNLOCK ===== */
 function unlock() {
-    const key = "khushvid"; // 🔐 CHANGE PASSWORD HERE
-    const input = document.getElementById("password").value;
+    const input = document.getElementById("password").value.trim();
 
-    if (input === key) {
+    if (input === PASSWORD) {
         document.getElementById("hacker").style.display = "none";
         document.getElementById("love").style.display = "block";
         document.getElementById("music").play();
@@ -238,10 +265,16 @@ function unlock() {
     }
 }
 
+/* ENTER KEY SUPPORT */
+document.addEventListener("keydown", e => {
+    if (e.key === "Enter") unlock();
+});
+
+/* ===== HEART RAIN ===== */
 function startHeartRain() {
     setInterval(() => {
         const heart = document.createElement("div");
-        heart.classList.add("heart");
+        heart.className = "heart";
         heart.innerText = "❤️";
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = (3 + Math.random() * 4) + "s";
@@ -250,6 +283,7 @@ function startHeartRain() {
     }, 300);
 }
 
+/* ===== POPUP ===== */
 function showLove() {
     document.getElementById("popupText").innerText =
         notes[Math.floor(Math.random() * notes.length)];
